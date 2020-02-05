@@ -6,7 +6,7 @@ interface PlantRepositoryComponent {
     val plantRepository: PlantRepository
 }
 
-class PlantRepositoryImpl(val registry: ComponentRegistry): PlantRepository {
+class PlantRepositoryImpl(val registry: PlantRepositoryComponent): PlantRepository {
     override fun savePlant(plant: Plant): String {
         val idForNewPlant = UUID.randomUUID().toString()
 
