@@ -7,12 +7,13 @@ interface PlantServiceComponent: PlantRepositoryComponent {
 }
 
 class PlantServiceImpl(val registry: PlantServiceComponent): PlantService {
-    override fun registerPlant(name: String) {
+    override fun registerPlant(name: String): Plant {
         val plant = Plant(name)
         registry.plantRepository.savePlant(plant)
+        return plant
     }
 }
 
 interface PlantService {
-    fun registerPlant(name: String)
+    fun registerPlant(name: String): Plant
 }
