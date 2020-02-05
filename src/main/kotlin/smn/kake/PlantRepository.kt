@@ -2,20 +2,20 @@ package smn.kake
 
 import java.util.*
 
-interface PlantRepositoryComponent {
-    val plantRepository: PlantRepository
+interface CarRepositoryComponent {
+    val carRepository: CarRepository
 }
 
-class PlantRepositoryImpl(val registry: PlantRepositoryComponent): PlantRepository {
-    override fun savePlant(plant: Plant): String {
-        val idForNewPlant = UUID.randomUUID().toString()
+class CarRepositoryImpl(val registry: CarRepositoryComponent): CarRepository {
+    override fun saveCar(car: Car): String {
+        val idForNewCar = UUID.randomUUID().toString()
 
-        //TODO: Save plant to db or something
+        //TODO: Save car to db or something
 
-        return idForNewPlant
+        return idForNewCar
     }
 }
 
-interface PlantRepository {
-    fun savePlant(plant: Plant): String
+interface CarRepository {
+    fun saveCar(car: Car): String
 }

@@ -1,8 +1,8 @@
 package smn.kake
 
-interface ComponentRegistry: PlantServiceComponent, PlantRepositoryComponent
+interface ComponentRegistry: CarServiceComponent, CarRepositoryComponent
 
 class ProductionRegistry: ComponentRegistry {
-    override val plantRepository = PlantRepositoryImpl(this)
-    override val plantService = PlantServiceImpl(this)
+    override val carRepository = CarRepositoryImpl(this)
+    override val carService = CarServiceImpl(this)
 }

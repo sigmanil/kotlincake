@@ -1,19 +1,17 @@
 package smn.kake
 
-import java.rmi.registry.LocateRegistry
-
-interface PlantServiceComponent: PlantRepositoryComponent {
-    val plantService: PlantService
+interface CarServiceComponent: CarRepositoryComponent {
+    val carService: CarService
 }
 
-class PlantServiceImpl(val registry: PlantServiceComponent): PlantService {
-    override fun registerPlant(name: String): Plant {
-        val plant = Plant(name)
-        registry.plantRepository.savePlant(plant)
-        return plant
+class CarServiceImpl(val registry: CarServiceComponent): CarService {
+    override fun registerCar(name: String): Car {
+        val car = Car(name)
+        registry.carRepository.saveCar(car)
+        return car
     }
 }
 
-interface PlantService {
-    fun registerPlant(name: String): Plant
+interface CarService {
+    fun registerCar(name: String): Car
 }
