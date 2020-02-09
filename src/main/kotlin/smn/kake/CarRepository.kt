@@ -6,7 +6,7 @@ interface CarRepositoryComponent {
     val carRepository: CarRepository
 }
 
-class CarRepositoryImpl(val registry: CarRepositoryComponent): CarRepository {
+class CarRepositoryImpl(val registry: ComponentRegistry): CarRepository {
     override fun saveCar(car: Car): String {
         val idForNewCar = UUID.randomUUID().toString()
 
